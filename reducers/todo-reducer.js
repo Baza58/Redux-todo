@@ -19,11 +19,11 @@ function todos(state = initialState, action) {
 			}, ...state
 			];
 		case REMOVE_TODO:
-			return;
+			return state.filter(todo => todo.id !== action.id);
 		case UPDATE_TODO:
 			return;
 		case COMPLETE_TODO:
-			return state.map((todo, i) => 
+			return state.map(todo => 
 				todo.id === action.id ? 
 					Object.assign({}, todo, { completed: !todo.completed }) :
 					todo
