@@ -4,7 +4,7 @@ const initialState = [
 	{
 		id: 0,
 		text: 'Use Redux!',
-		complete: false
+		completed: false
 	}
 ];
 
