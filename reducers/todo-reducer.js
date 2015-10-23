@@ -8,7 +8,7 @@ const initialState = [
 	}
 ];
 
-function todo(state = initialState, action) {
+function todos(state = initialState, action) {
 	switch(action.type) {
 		case ADD_TODO:
 			return [
