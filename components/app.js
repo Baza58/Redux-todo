@@ -4,11 +4,11 @@ import TodoList from './TodoList';
 
 class App extends Component {
 	render() {
-		const { store, addTodo, removeTodo, updateTodo, completeTodo, completeAll, undoAll } = this.props;
+		const { todos, actions } = this.props;
 		return (
 			<div>
-				<TodoInput addTodo={addTodo} />
-				<TodoList />
+				<TodoInput addTodo={actions.addTodo} />
+				<TodoList todos={todos} actions{actions} />
 			</div>
 		);
 	}
