@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 class App extends Component {
 	render() {
-		return <h1>{this.props.todos.length}</h1>
+		const { store, addTodo, removeTodo, updateTodo, completeTodo, completeAll, undoAll } = this.props;
+		return (
+			<TodoInput />
+			<TodoList />
+		);
 	}
 }
 
