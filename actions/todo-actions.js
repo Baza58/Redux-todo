@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, UPDATE_TODO, COMPLETE_TODO, COMPLETE_ALL, UNDO_TODO, UNDO_ALL } from '../constants/todo-constants';
+import { ADD_TODO, REMOVE_TODO, UPDATE_TODO, COMPLETE_TODO, COMPLETE_ALL, UNDO_ALL } from '../constants/todo-constants';
 
 export function addTodo(text) {
 	return {
