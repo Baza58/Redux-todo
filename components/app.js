@@ -8,7 +8,7 @@ class App extends Component {
 		return (
 			<div>
 				<TodoInput addTodo={actions.addTodo} />
-				<TodoList todos={todos} actions{actions} />
+				<TodoList todos={todos} actions={actions} />
 			</div>
 		);
 	}
