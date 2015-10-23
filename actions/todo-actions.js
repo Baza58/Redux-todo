@@ -1,40 +1,45 @@
-import { ADD_TODO, REMOVE_TODO, UPDATE_TODO, COMPLETE_TODO, COMPLETE_ALL, UNDO_ALL } from '../constants/todo-constants';
+import { ADD_TODO, REMOVE_TODO, UPDATE_TODO, COMPLETE_TODO, COMPLETE_ALL, UNDO_TODO, UNDO_ALL } from '../constants/todo-constants';
 
-function addTodo(text) {
+export function addTodo(text) {
 	return {
 		type: ADD_TODO,
 		text
 	};
 } 
 
-function removeTodo(id) {
+export function removeTodo(id) {
 	return {
 		type: REMOVE_TODO,
 		id
 	};
 }
 
-function updateTodo(todo) {
+export function updateTodo(todo) {
 	return {
 		type: UPDATE_TODO,
 		todo
 	};
 }
 
-function completeTodo(id) {
+export function completeTodo(id) {
 	return {
 		type: COMPLETE_TODO,
 		id
 	};
 }
 
-function completeAll() {
+export function completeAll() {
 	return {
 		type: COMPLETE_ALL,
 	};
 }
+export function undoTodo(id) {
+	return {
+		type: UNDO_TODO,
+	};
+}
 
-function undoAll() {
+export function undoAll() {
 	return {
 		type: UNDO_ALL
 	};
