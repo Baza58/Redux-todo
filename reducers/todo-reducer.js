@@ -15,7 +15,7 @@ function todos(state = initialState, action) {
 			{
 				id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
 				text: action.text,
-				comleted: false
+				completed: false
 			}, ...state
 			];
 		case REMOVE_TODO:
@@ -33,4 +33,4 @@ function todos(state = initialState, action) {
 	};
 }
 
-export default todo;
+export default todos;
