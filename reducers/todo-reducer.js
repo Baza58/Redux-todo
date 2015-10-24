@@ -21,7 +21,11 @@ function todos(state = initialState, action) {
 		case REMOVE_TODO:
 			return state.filter(todo => todo.id !== action.id);
 		case UPDATE_TODO:
-			return;
+			return state.map(todo => 
+				todo.id === action.id ? 
+					Object.assign({}, todo, { text: action.text }) :
+					todo
+			);
 		case COMPLETE_TODO:
 			return state.map(todo => 
 				todo.id === action.id ? 

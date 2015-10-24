@@ -14,10 +14,11 @@ export function removeTodo(id) {
 	};
 }
 
-export function updateTodo(todo) {
+export function updateTodo(id, text) {
 	return {
 		type: UPDATE_TODO,
-		todo
+		id,
+		text
 	};
 }
 

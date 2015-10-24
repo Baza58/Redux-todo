@@ -11,12 +11,14 @@ class TodoList extends Component {
 						 key={i}
 						 completeTodo={actions.completeTodo}
 						 removeTodo={actions.removeTodo}
-						  />
+						 updateTodo={actions.updateTodo} />
 		});
 		return (
 			<div className="todo-list-container" >
 				{todoNodes}
-			<button className="btn btn-danger" onClick={actions.completeAll.bind(this)} >Toggle Complete All!</button>
+			<button className="btn btn-danger" 
+					onClick={actions.completeAll.bind(this)} 
+					style={{display: todos.length ? 'inline' : 'none'}} >Toggle Complete All!</button>
 			</div>
 			
 		);
