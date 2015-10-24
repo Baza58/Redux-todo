@@ -34,8 +34,3 @@ export function completeAll() {
 		type: COMPLETE_ALL,
 	};
 }
-export function undoTodo(id) {
-	return {
-		type: UNDO_TODO,
-	};
-}

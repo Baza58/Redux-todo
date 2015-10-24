@@ -35,7 +35,10 @@ class TodoInput extends Component {
 						ref="input" 
 						onChange={this.onChange} 
 						onKeyDown={this.onKeyDown} />
-				<button onClick={this.onClick} className="btn btn-primary btn-submit" >Add todo</button>
+				<button onClick={this.onClick} 
+						className="btn btn-primary btn-submit" >
+							Add todo
+				</button>
 			</div>
 		);
 	}

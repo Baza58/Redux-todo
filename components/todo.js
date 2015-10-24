@@ -48,7 +48,9 @@ class Todo extends Component {
 				</div>
 				<div className="col-xs-6 todo-heading-container">
 					<h4 className="todo-heading" 
-						style={{display: editing ? 'none' : 'initial'}} >
+						style={{display: editing ? 'none' : 'initial', 
+								textDecoration: completed ? 'line-through' : 'none',
+								opacity: completed ? 0.5 : 1 }} >
 							{text}
 					</h4>
 					<input  type="text"
@@ -60,9 +62,20 @@ class Todo extends Component {
 							onChange={this.handleEditing} />
 				</div>
 				<div className="col-xs-5">
-					<button className="btn btn-default" style={{display: editing ? 'none' : 'initial'}} onClick={this.editTodo} >Edit</button>
-					<button className="btn btn-success" style={{display: editing ? 'inline' : 'none'}} onClick={this.saveEdit} >Save</button> 
-					<button className="btn btn-default remove-button" onClick={this.onClick} >Remove</button> 
+					<button className="btn btn-default" 
+							style={{display: editing ? 'none' : 'initial'}} 
+							onClick={this.editTodo} >
+								Edit
+					</button>
+					<button className="btn btn-success" 
+							style={{display: editing ? 'inline' : 'none'}} 
+							onClick={this.saveEdit} >
+								Save
+					</button> 
+					<button className="btn btn-default remove-button" 
+							onClick={this.onClick} >
+								Remove
+					</button> 
 				</div>
 			</div>
 		);

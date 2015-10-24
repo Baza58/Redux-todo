@@ -1,9 +1,9 @@
-import { ADD_TODO, REMOVE_TODO, COMPLETE_TODO, COMPLETE_ALL, UNDO_ALL, UPDATE_TODO } from '../constants/todo-constants';
+import { ADD_TODO, REMOVE_TODO, COMPLETE_TODO, COMPLETE_ALL, UPDATE_TODO } from '../constants/todo-constants';
 
 const initialState = [
 	{
 		id: 0,
-		text: 'Use Redux!',
+		text: 'Keep on coding!',
 		completed: false
 	}
 ];

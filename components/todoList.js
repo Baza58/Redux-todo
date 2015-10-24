@@ -18,7 +18,7 @@ class TodoList extends Component {
 				{todoNodes}
 			<button className="btn btn-danger" 
 					onClick={actions.completeAll.bind(this)} 
-					style={{display: todos.length ? 'inline' : 'none'}} >Toggle Complete All!</button>
+					style={{display: todos.length ? 'inline' : 'none'}} >Complete All!</button>
 			</div>
 			
 		);
