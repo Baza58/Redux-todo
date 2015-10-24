@@ -21,8 +21,7 @@ class Todo extends Component {
 					<h4 className="todo-heading">{text}</h4>
 				</div>
 				<div className="col-xs-4">
-					
-					<button className="btn btn-danger remove-button" onClick={this.onClick} >Remove</button> 
+					<button className="btn btn-default remove-button" onClick={this.onClick} >Remove</button> 
 				</div>
 			</div>
 		);

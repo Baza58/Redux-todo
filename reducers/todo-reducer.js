@@ -29,9 +29,10 @@ function todos(state = initialState, action) {
 					todo
 			);
 		case COMPLETE_ALL:
-			return;
-		case UNDO_ALL:
-			return;
+			const allMarked = state.every(todo => todo.completed);
+			return state.map(todo => Object.assign({}, todo, {
+				completed: !allMarked
+			}));
 		default:
 			return state;
 	};

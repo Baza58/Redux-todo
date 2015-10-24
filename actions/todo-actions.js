@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, UPDATE_TODO, COMPLETE_TODO, COMPLETE_ALL, UNDO_ALL } from '../constants/todo-constants';
+import { ADD_TODO, REMOVE_TODO, UPDATE_TODO, COMPLETE_TODO, COMPLETE_ALL } from '../constants/todo-constants';
 
 export function addTodo(text) {
 	return {
@@ -36,11 +36,5 @@ export function completeAll() {
 export function undoTodo(id) {
 	return {
 		type: UNDO_TODO,
-	};
-}
-
-export function undoAll() {
-	return {
-		type: UNDO_ALL
 	};
 }
