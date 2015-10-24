@@ -12,18 +12,19 @@ class TodoInput extends Component {
 
 	onClick = (e) => {
 		let text = this.refs.input.value;
+		if (!text) return;
 		this.props.addTodo(text);
 		this.setState({
 			enteredText: '' 
 		});
-
 	}
 
 	render = () => {
 		return (
-			<div>
-				<input type="text" ref="input" onChange={this.onChange} value={this.state.enteredText} />
-				<button onClick={this.onClick}>Add todo</button>
+			<div className="todo-input-container">
+				<label htmlFor="input">Add Todo</label>
+				<input type="text" id="input" className="form-control" ref="input" onChange={this.onChange} value={this.state.enteredText} />
+				<button onClick={this.onClick} className="btn btn-primary btn-submit" >Add todo</button>
 			</div>
 		);
 	}

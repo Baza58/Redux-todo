@@ -13,6 +13,10 @@ module.exports = {
 			test: /\.js$/,
 			loaders: ['babel?stage=0'],
 			exclude: /node_modules/,
+		},
+		{
+			test: /\.sass$/,
+			loaders: ['style','css','sass?indentedSyntax']
 		}
 		]
 	}

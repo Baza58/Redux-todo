@@ -13,11 +13,17 @@ class Todo extends Component {
 		
 
 		return (
-			<div>
-				<span>{text}</span>
-				<input type="checkbox" checked={this.props.completed} onChange={this.onChange} />
-				<button onClick={this.onClick} >Remove</button> 
-				{this.props.id}
+			<div className="todo-container row">
+				<div className="col-xs-1" >
+					<input type="checkbox" checked={this.props.completed} className="todo-checkbox" onChange={this.onChange} />
+				</div>
+				<div className="col-xs-7 todo-heading-container">
+					<h4 className="todo-heading">{text}</h4>
+				</div>
+				<div className="col-xs-4">
+					
+					<button className="btn btn-danger remove-button" onClick={this.onClick} >Remove</button> 
+				</div>
 			</div>
 		);
 	}

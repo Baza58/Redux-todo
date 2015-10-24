@@ -13,7 +13,7 @@ class TodoList extends Component {
 						 removeTodo={actions.removeTodo} />
 		});
 		return (
-			<div>
+			<div className="todo-list-container" >
 				{todoNodes}
 			</div>
 		);

@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import App from './containers/app';
+require("./app.sass");
 
 const store = configureStore();
 
