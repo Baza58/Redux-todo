@@ -9,20 +9,24 @@
 
 .todo-heading-container
 	height: inherit
+	flex: 2
+	margin-right: 10px
 
 	.todo-heading
 		display: inline
-		line-height: 35px
+		word-break: break-all
 
 .todo-input-container
 	margin-top: 20px
 
 .todo-container
-	margin-bottom: 15px
-	height: 35px
+	margin-bottom: 20px
+	display: flex
+	justify-content: space-between
+	align-items: center
 
 .todo-checkbox
-	margin-top: 11px !important
+	margin: 0px 10px 0px 0px !important
 
 .remove-button
 	float: right
@@ -33,3 +37,7 @@
 
 #app
 	margin-top: 30px
+
+.buttons-section
+	button
+		margin-left: 5px !important

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Todo extends Component {
 	state = {
 		editing: false,
-		text: this.props.text
+		text: ''
 	}
 
 	onChange = () => {
@@ -19,7 +19,8 @@ class Todo extends Component {
 	}
 	editTodo = (e) => {
 		this.setState({
-			editing: !this.state.editing 
+			editing: !this.state.editing,
+			text: this.props.text 
 		});
 		this.refs.input.focus();
 		
@@ -39,14 +40,14 @@ class Todo extends Component {
 		const { id, text, completed } = this.props;
 		const { editing } = this.state;
 		return (
-			<div className="todo-container row">
-				<div className="col-xs-1" >
+			<div className="todo-container">
+				<div className="" >
 					<input  type="checkbox" 
 							checked={this.props.completed} 
 							className="todo-checkbox" 
 							onChange={this.onChange} />
 				</div>
-				<div className="col-xs-6 todo-heading-container">
+				<div className="todo-heading-container">
 					<h4 className="todo-heading" 
 						style={{display: editing ? 'none' : 'initial', 
 								textDecoration: completed ? 'line-through' : 'none',
@@ -61,7 +62,7 @@ class Todo extends Component {
 							onKeyDown={this.onKeyDown} 
 							onChange={this.handleEditing} />
 				</div>
-				<div className="col-xs-5">
+				<div className="buttons-section">
 					<button className="btn btn-default" 
 							style={{display: editing ? 'none' : 'initial'}} 
 							onClick={this.editTodo} >

@@ -6,7 +6,7 @@ class App extends Component {
 	render() {
 		const { todos, actions } = this.props;
 		return (
-			<div className="col-xs-6 col-xs-offset-3">
+			<div className="col-sm-6 col-sm-offset-3">
 				<h1>Todo App</h1>
 				<TodoInput addTodo={actions.addTodo} />
 				<hr />
