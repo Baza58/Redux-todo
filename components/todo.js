@@ -77,6 +77,7 @@ class Todo extends Component {
 							onClick={this.onClick} >
 								Remove
 					</button> 
+					
 				</div>
 			</div>
 		);
