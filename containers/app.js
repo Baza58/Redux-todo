@@ -5,7 +5,7 @@ import App from '../components/app';
 
 function mapStateToProps(state) {
 	return {
-		todos: state.todos
+		todos: state.todos.present
 	};
 }
 

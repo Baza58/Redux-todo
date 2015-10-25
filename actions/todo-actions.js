@@ -1,4 +1,9 @@
 import { ADD_TODO, REMOVE_TODO, UPDATE_TODO, COMPLETE_TODO, COMPLETE_ALL } from '../constants/todo-constants';
+import { ActionCreators } from 'redux-undo';
+
+export const undo = ActionCreators.undo;
+
+export const redo = ActionCreators.redo;
 
 export function addTodo(text) {
 	return {
