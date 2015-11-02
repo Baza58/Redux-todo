@@ -1,42 +1,55 @@
 import { ADD_TODO, REMOVE_TODO, COMPLETE_TODO, COMPLETE_ALL, UPDATE_TODO } from '../constants/todo-constants';
+import {Map} from 'immutable';
 
-const initialState = [
-	{
-		id: 0,
-		text: 'Keep on coding!',
+const initialState = Map({
+	todos: Map({
+			0: Map({
+				id: "0",
+				text: 'Keep on coding!',
+				completed: false
+			}),
+		})
+});
+
+function addTodo(state, action) {
+	const id = state.get('todos').reduce((maxId, todo) => Math.max(todo.get('id'), maxId), -1) + 1;
+	return state.setIn(['todos', id], Map({
+		id,
+		text: action.text,
 		completed: false
-	}
-];
+	}));
+}
+
+function removeTodo(state, action) {
+	return state.deleteIn(['todos', action.id]);
+}
+
+function updateTodo(state, action) {
+	return state.setIn(['todos', action.id, 'text'], action.text);
+}
+
+function completeTodo(state, action) {
+	return state.setIn(['todos', action.id, 'completed'], !state.getIn(['todos', action.id, 'completed']));
+}
+
+function completeAll(state) {
+	const marked = state.get('todos').every(todo => todo.get('completed') === true);
+	const newState = state.get('todos').map(todo => todo.set('completed', !marked));
+	return state.set('todos', newState);
+}
 
 function todos(state = initialState, action) {
 	switch(action.type) {
 		case ADD_TODO:
-			return [
-			{
-				id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
-				text: action.text,
-				completed: false
-			}, ...state
-			];
+			return addTodo(state, action);
 		case REMOVE_TODO:
-			return state.filter(todo => todo.id !== action.id);
+			return removeTodo(state,action);
 		case UPDATE_TODO:
-			return state.map(todo => 
-				todo.id === action.id ? 
-					Object.assign({}, todo, { text: action.text }) :
-					todo
-			);
+			return updateTodo(state, action);
 		case COMPLETE_TODO:
-			return state.map(todo => 
-				todo.id === action.id ? 
-					Object.assign({}, todo, { completed: !todo.completed }) :
-					todo
-			);
+			return completeTodo(state, action);
 		case COMPLETE_ALL:
-			const allMarked = state.every(todo => todo.completed);
-			return state.map(todo => Object.assign({}, todo, {
-				completed: !allMarked
-			}));
+			return completeAll(state);
 		default:
 			return state;
 	};

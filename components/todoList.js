@@ -3,16 +3,19 @@ import Todo from './todo';
 
 class TodoList extends Component {
 	render = () => {
+		
 		const { todos, actions } = this.props;
-		let todoNodes = todos.map((todo, i) => {
-			return <Todo id={todo.id}
-						 text={todo.text}
-						 completed={todo.completed}
-						 key={i}
+		let todoNodes = todos.get('todos').map((todo, i) => {
+			
+			return <Todo id={todo.get('id')}
+						 text={todo.get('text')}
+						 completed={todo.get('completed')}
+						 key={todo.get('id')}
 						 completeTodo={actions.completeTodo}
 						 removeTodo={actions.removeTodo}
 						 updateTodo={actions.updateTodo} />
 		});
+		
 		return (
 			<div className="todo-list-container" >
 				{todoNodes}
