@@ -44,4 +44,8 @@ class TodoInput extends Component {
 	}
 }
 
+TodoInput.propTypes = {
+	addTodo: React.PropTypes.func.isRequired
+}
+
 export default TodoInput;

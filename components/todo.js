@@ -83,4 +83,14 @@ class Todo extends Component {
 	}
 }
 
+Todo.propTypes = {
+	id: React.PropTypes.string.isRequired,
+	text: React.PropTypes.string.isRequired,
+	completed: React.PropTypes.bool.isRequired,
+	key: React.PropTypes.string,
+	completeTodo: React.PropTypes.func.isRequired,
+	removeTodo: React.PropTypes.func.isRequired,
+	updateTodo: React.PropTypes.func.isRequired
+}
+
 export default Todo;

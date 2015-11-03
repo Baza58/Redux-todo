@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Todo from './todo';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 
 class TodoList extends Component {
 	render = () => {
 		
 		const { todos, actions } = this.props;
-		let todoNodes = todos.get('todos').map((todo, i) => {
+		let todoNodes = todos.get('todos').valueSeq().map((todo, i) => {
 			
 			return <Todo id={todo.get('id')}
 						 text={todo.get('text')}
@@ -21,7 +22,7 @@ class TodoList extends Component {
 				{todoNodes}
 			<button className="btn btn-danger" 
 					onClick={actions.completeAll.bind(this)} 
-					style={{display: todos.length ? 'inline' : 'none'}} >Complete All!
+					style={{display: todos.get('todos').count() > 0 ? 'inline' : 'none'}} >Complete All!
 			</button>
 			{' '}
 			<button className="btn btn-default" 
@@ -32,6 +33,11 @@ class TodoList extends Component {
 			
 		);
 	}
+}
+
+TodoList.propTypes = {
+	todos: ImmutablePropTypes.mapOf(ImmutablePropTypes.map),
+	actions: React.PropTypes.object.isRequired
 }
 
 export default TodoList;
