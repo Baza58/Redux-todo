@@ -13,8 +13,8 @@ const initialState = Map({
 
 function addTodo(state, action) {
 	const id = state.get('todos').reduce((maxId, todo) => Math.max(todo.get('id'), maxId), -1) + 1;
-	return state.setIn(['todos', id], Map({
-		id,
+	return state.setIn(['todos', id.toString()], Map({
+		id: id.toString(),
 		text: action.text,
 		completed: false
 	}));
