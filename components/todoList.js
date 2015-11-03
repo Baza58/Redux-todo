@@ -19,15 +19,18 @@ class TodoList extends Component {
 		
 		return (
 			<div className="todo-list-container" >
-				{todoNodes}
+				<div className="todos-container">
+					{todoNodes}
+				</div>
 			<button className="btn btn-danger" 
 					onClick={actions.completeAll.bind(this)} 
-					style={{display: todos.get('todos').count() > 0 ? 'inline' : 'none'}} >Complete All!
+					style={{display: todos.get('todos').count() > 0 ? 'inline' : 'none'}} >
+						Complete All!
 			</button>
 			{' '}
 			<button className="btn btn-default" 
 					onClick={actions.undo.bind(this)}>
-				undo
+						Undo
 			</button>
 			</div>
 			

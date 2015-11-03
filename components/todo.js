@@ -41,7 +41,7 @@ class Todo extends Component {
 		const { editing } = this.state;
 		return (
 			<div className="todo-container">
-				<div className="" >
+				<div>
 					<input  type="checkbox" 
 							checked={this.props.completed} 
 							className="todo-checkbox" 
@@ -63,12 +63,12 @@ class Todo extends Component {
 							onChange={this.handleEditing} />
 				</div>
 				<div className="buttons-section">
-					<button className="btn btn-default" 
+					<button className="btn btn-default edit-btn" 
 							style={{display: editing ? 'none' : 'initial'}} 
 							onClick={this.editTodo} >
 								Edit
 					</button>
-					<button className="btn btn-success" 
+					<button className="btn btn-success save-btn" 
 							style={{display: editing ? 'inline' : 'none'}} 
 							onClick={this.saveEdit} >
 								Save
